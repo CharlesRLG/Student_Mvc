@@ -1,0 +1,61 @@
+#title {
+  text-align: center;
+}
+
+#content-html {
+  text-align: center;
+  width: auto;
+  height: auto;
+}
+
+menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+menu li {
+  float: left;
+  padding: 3px;
+  border: black 1px solid;
+}
+
+#container {
+  text-align: center;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+table th {
+  border: black solid 1px;
+  text-align: center;
+}
+
+table td {
+  border: black solid 1px;
+}
+
+table td a {
+  text-decoration: none;
+}
+
+strong {
+  color: red;
+}
+
+a:visited {
+  color: black;
+}
+
+#menu-bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
