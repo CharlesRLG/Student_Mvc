@@ -25,13 +25,16 @@
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="http://localhost/student_mvc/index.php" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="index.php?content_index" class="nav-link px-2 link-secondary">Home</a></li>
           <li><a href="index.php?table=student" class="nav-link px-2 link-dark">Liste des étudiants</a></li>
           <li><a href="index.php?table=tag" class="nav-link px-2 link-dark">Liste des Tags</a></li>
           <li><a href="index.php?table=project" class="nav-link px-2 link-dark">Liste des projets</a></li>
         </ul>
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Recherchez..." aria-label="Search">
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" id="formulaireRecheche" name="formulaireRecheche" method="post" action="index.php">
+          <input type="search" class="form-control form-control-dark" placeholder="Recherchez..." 
+                 aria-label="Search" id="motsClee" />
+          <input type="submit" class="form-control form-control-dark"  
+                 aria-label="Search" value="Valider" id="valider"/>
         </form>
 
       </header>
