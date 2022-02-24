@@ -20,10 +20,16 @@
       <td><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=update">🖊️</a></td>
       <td><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=delete">❌</a></td>
     </tr>
-
+    
     <tr>
-      <td><?=explode("# ",$student->tags($student1['id'])['tags']) ?></td>
-    </tr>
-  <?php } ?>
+      <td colspan = "8">
+        <?php 
+        $studentTags = $student->tags($student1['id']);
+        foreach ($studentTags as $studentTag){
+          echo "#" . $studentTag['name'] . " ";
+
+        }
+    
+   } ?>
 
 </table>
