@@ -65,6 +65,9 @@ switch ($op) {
   case 'update': {
       if ($id > 0) {
         if (empty($_POST)) {
+          require 'modele/SchoolYear.php';
+          $school_year = new SchoolYear();
+          $school_years = $school_year->all();
           $student->select($id);
           require_once('vue/student_update.php');
         }

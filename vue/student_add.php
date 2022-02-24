@@ -13,8 +13,8 @@
 
   <select name="school_year_id" id="school_id">
     <option value="">--Année scolaire--</option>
-    <?php foreach ($school_years as $school_year) { ?>
-      <option value="<?= $school_year['id'] ?>"> <?= $school_year['id'] ?></option>
+    <?php foreach ($school_years as $school_year1) { ?>
+      <option value="<?= $school_year1['id'] ?>"> <?= $school_year1['id'] ?></option>
     <?php } ?>
 
   </select>

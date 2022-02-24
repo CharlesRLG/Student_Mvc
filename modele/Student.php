@@ -10,8 +10,10 @@ class Student //
   public ?string $email;
   public ?string $created_at;
   public ?string $updated_at;
+  public ?array $tags;
+  public ?array $projects;
   private $pdo; //recupère la requête SQL
-
+  
   public function __construct()
   {
     $this->pdo = getpdo(); //permet un objet de se connecter à la base de données
@@ -48,6 +50,7 @@ class Student //
     $this->email = $data['email'];
     $this->created_at = $data['created_at'];
     $this->updated_at = $data['updated_at'];
+   
   }
 
   public function insert()
@@ -94,4 +97,35 @@ class Student //
     $stmt->bindParam(':id', $id);
     $stmt->execute();
   }
-}
+
+  public function tags($id)
+  {
+    $sql="SELECT tag. * FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN tag ON student_tag.tag_id = tag.id WHERE student_tag.student_id=:id ORDER BY tag.id DESC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    return $stmt -> fetchAll();
+  }
+
+  public function projects()
+  {
+    $sql="SELECT project. * FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN project ON student_tag.project_id = project.id WHERE student_tag.student_id=:id ORDER BY project.id DESC";
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->bindParam(':id', $this->id);
+    $stmt->execute();
+    $this->projects=$stmt->fetchAll();
+  }
+
+  public function allStudentAllTags(string $search='')
+  {
+    $sql = "SELECT student.*, tag.name FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN tag 
+    ON student_tag.tag_id = tag.id WHERE tag.name LIKE '%$search%' OR student.firstname LIKE '%$search%' 
+    OR student.lastname LIKE '%$search%' ORDER BY tag.id DESC";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt;
+  }
+  }
+   
+

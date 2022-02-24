@@ -68,17 +68,17 @@ switch ($op) {
       }
     }
     case 'insert':
-      if ($id > 0) {
-        if (empty($_POST))
+     
+        if (empty($_POST)){
         require_once('vue/tag_add.php');
-      } else {
+      }else {
       if (validForm($tag)) {
         $tag->insert();
       }
       $tags = $tag->all();
       require_once('vue/tag_liste.php');
-
-      }
+    
+    }
     break;
 
   default:

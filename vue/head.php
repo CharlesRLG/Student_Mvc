@@ -38,4 +38,6 @@
         </form>
 
       </header>
-    </div>
+    <body>
+    <section id="centrage">
+    
