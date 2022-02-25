@@ -100,7 +100,7 @@ class Student //
 
   public function tags($id)
   {
-    $sql="SELECT tag. * FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN tag ON student_tag.tag_id = tag.id WHERE student_tag.student_id=:id ORDER BY tag.id DESC";
+    $sql="SELECT tag.* FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN tag ON student_tag.tag_id = tag.id WHERE student_tag.student_id=:id ORDER BY tag.id DESC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(':id', $id);
     $stmt->execute();
@@ -109,7 +109,8 @@ class Student //
 
   public function projects()
   {
-    $sql="SELECT project. * FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN project ON student_tag.project_id = project.id WHERE student_tag.student_id=:id ORDER BY project.id DESC";
+    $sql="SELECT project.* FROM project JOIN student ON student.project_id = student.id WHERE student.project_id=:id
+          ORDER BY project.id DESC";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(':id', $this->id);
     $stmt->execute();
@@ -126,6 +127,20 @@ class Student //
     $stmt->execute();
     return $stmt;
   }
+
+  public function allStudentAllTagsAllProject(string $search='')
+  {
+    $sql = "SELECT student.*, tag.name, project.name_project FROM ( student_tag JOIN student 
+    ON student_tag.student_id = student.id JOIN tag 
+    ON student_tag.tag_id = tag.id ) AND (SELECT project.* FROM project JOIN student 
+    ON student.project_id = student.id ) WHERE tag.name LIKE '%$search%' OR student.firstname LIKE '%$search%' 
+    OR student.lastname LIKE '%$search%' OR project.name_project LIKE '%$search%' ORDER BY ( tag.id OR project.id ) DESC";
+
+    $stmt = $this->pdo->prepare($sql);
+    $stmt->execute();
+    return $stmt;
+  }
+  
   
   }
    

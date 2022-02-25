@@ -10,7 +10,7 @@
                  <th>Crée le</th>
                  <th>Mise à jour</th>
                  <th>Nom du projet</th>
-                 <th>ressource utilisé</th>
+                 <!-- <th>ressource utilisé</th> -->
                  <td class="caseModifColor"><a href="index.php?table=student&op=insert">➕</a></td>
                </tr>
                
@@ -23,7 +23,7 @@
                    <td><?= $studentsearch['email'] ?></td>
                    <td><?= $studentsearch['created_at'] ?></td>
                    <td><?= $studentsearch['updated_at'] ?></td>
-                   <td><?= $studentsearch['name_project'] ?></td>
+                   <!-- <td><?= $studentsearch['name_project'] ?></td> -->
                    <td><?= $studentsearch['name'] ?></td>
                    <td class="caseModifColor"><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=update">🖊️</a></td>
                    <td class="caseModifColor"><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=delete">❌</a></td>
