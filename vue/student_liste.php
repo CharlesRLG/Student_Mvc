@@ -6,7 +6,7 @@
     <th>Adresse e-mail</th>
     <th>Crée le</th>
     <th>Mise à jour</th>
-    <td><a href="index.php?table=student&op=insert">➕</a></td>
+    <td class="caseModifColor"><a href="index.php?table=student&op=insert">➕</a></td>
   </tr>
 
   <?php
@@ -17,11 +17,11 @@
       <td><?= $student1['email'] ?></td>
       <td><?= $student1['created_at'] ?></td>
       <td><?= $student1['updated_at'] ?></td>
-      <td><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=update">🖊️</a></td>
-      <td><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=delete">❌</a></td>
+      <td class="caseModifColor"><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=update">🖊️</a></td>
+      <td class="caseModifColor"><a href="index.php?table=student&id=<?= $student1['id'] ?>&op=delete">❌</a></td>
     </tr>
     
-    <tr>
+    <tr id="tagInStudentTable">
       <td colspan = "8">
         <?php 
         $studentTags = $student->tags($student1['id']);

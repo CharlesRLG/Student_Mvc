@@ -1,44 +1,102 @@
+header {
+  background-color: rgb(240, 239, 238);
+  min-width: 80%;
+}
+
+img {
+  max-width: 90%;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  opacity: 90%;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+#valider {
+  background-color: rgb(88, 88, 231);
+  color: rgb(231, 203, 171);
+}
+
 #title {
   text-align: center;
 }
 
 #content-html {
+
   text-align: center;
   width: auto;
-  height: auto;
+  min-height: 800px;
 }
 
-menu {
+#tableTag {
+  min-height: 800px;
+}
+.researchView {
+  min-height: 800px;
+}
+.caseModifColor{
+  background-color: rgb(248, 250, 149);
+}
+
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   margin-bottom: 20px;
   margin-left: 10px;
+  
 }
 
-menu li {
+ul li {
   float: left;
-  padding: 3px;
+  height: 40px;
+  padding:0px 3px;
   border: black 1px solid;
+  border-radius: 5px;
+  background-color: rgb(88, 88, 231);
+  margin: 0 5px;
+}
+
+li a p {
+  color: rgb(231, 203, 171);
+}
+
+#erreur_image{
+  width: 50%;
 }
 
 #centrage {
   text-align: center;
 }
-
 table {
+  
   display: flex;
   justify-content: center;
 }
-
 table th {
   border: black solid 1px;
+  height: 40px;
+  padding: 0px 5px;
+  background-color: rgb(88, 88, 231);
   text-align: center;
+  color: rgb(231, 203, 171);
 }
 
 table td {
   border: black solid 1px;
+  background-color: rgb(224, 222, 222);
+  color: rgb(0, 0, 0);
+  height: 40px;
+  padding: 0px 5px;
+}
+
+table #tagInStudentTable td {
+  border: black solid 1px;
+  background-color: rgba(190, 184, 184, 0.493);
+  color: rgb(134, 99, 0);
+  height: 40px;
+  padding: 0px 10px;
 }
 
 table td a {
@@ -58,4 +116,3 @@ a:visited {
   justify-content: flex-end;
   margin-right: 10px;
 }
-

@@ -11,6 +11,7 @@
                  <th>Mise à jour</th>
                  <th>Nom du projet</th>
                  <th>ressource utilisé</th>
+                 <td class="caseModifColor"><a href="index.php?table=student&op=insert">➕</a></td>
                </tr>
                
                <?php
@@ -24,9 +25,8 @@
                    <td><?= $studentsearch['updated_at'] ?></td>
                    <td><?= $studentsearch['name_project'] ?></td>
                    <td><?= $studentsearch['name'] ?></td>
-                   <td><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=update">🖊️</a></td>
-                   <td><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=delete">❌</a></td>
-                   <td><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=insert">➕</a></td>
+                   <td class="caseModifColor"><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=update">🖊️</a></td>
+                   <td class="caseModifColor"><a href="index.php?table=student&id=<?= $studentsearch['id'] ?>&op=delete">❌</a></td>
                  </tr>
                <?php
                 }
@@ -34,7 +34,8 @@
              </table>
            <?php
             } else {
-              echo "Aucune donnée trouvée dans la Base de donnée";
+              echo '<p> Aucune donnée trouvée dans la Base de donnée </p><br>
+                    <img id="erreur_image" src="vue/css/Error.svg.png" alt="Erreur_recherche">';
             }
             ?>
          </section>

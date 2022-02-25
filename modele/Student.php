@@ -127,16 +127,6 @@ class Student //
     return $stmt;
   }
   
-  public function allStudentAllProjects(string $search='')
-  {
-    $sql = "SELECT student.*, project.name FROM student_tag JOIN student ON student_tag.student_id = student.id JOIN project 
-    ON student_tag.project_id = project.id WHERE project.name LIKE '%$search%' OR student.firstname LIKE '%$search%' 
-    OR student.lastname LIKE '%$search%' ORDER BY project.id DESC";
-
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt;
-  }
   }
    
 

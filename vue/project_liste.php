@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Nom du client</th>
     <th>Date de rendu</th>
-    <td><a href="project_page.php?table=project&id=0&op=insert">➕</a></td>
+    <td class="caseModifColor"><a href="project_page.php?table=project&id=0&op=insert">➕</a></td>
   </tr>
 
   <?php
@@ -17,8 +17,8 @@
       <td><?= $project1['description'] ?></td>
       <td><?= $project1['client_name'] ?></td>
       <td><?= $project1['delivery_date'] ?></td>
-      <td><a href="project_page.php?table=project&id=<?= $project1['id'] ?>&op=update">🖊️</a></td>
-      <td><a href="project_page.php?table=project&id=<?= $project1['id'] ?>&op=delete">❌</a></td>
+      <td class="caseModifColor"><a href="project_page.php?table=project&id=<?= $project1['id'] ?>&op=update">🖊️</a></td>
+      <td class="caseModifColor"><a href="project_page.php?table=project&id=<?= $project1['id'] ?>&op=delete">❌</a></td>
     </tr>
   <?php } ?>
 
