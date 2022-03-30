@@ -9,7 +9,7 @@
                  <th>Adresse e-mail</th>
                  <th>Crée le</th>
                  <th>Mise à jour</th>
-                 <th>Nom du projet</th>
+                 <th>Nom du Tag</th>
                  <!-- <th>ressource utilisé</th> -->
                  <td class="caseModifColor"><a href="index.php?table=student&op=insert">➕</a></td>
                </tr>
